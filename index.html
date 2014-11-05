@@ -18,7 +18,8 @@
   <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
 
   <!-- Style theme. More available in /themes/style/ or create your own. -->
-  <link rel="stylesheet" media="screen" href="themes/style/web-2.0.css">
+  <!-- <link rel="stylesheet" media="screen" href="themes/style/web-2.0.css"> -->
+  <link rel="stylesheet" media="screen" href="themes/style/swiss.css">
 
   <!-- Transition theme. More available in /themes/transition/ or create your own. -->
   <link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
@@ -28,6 +29,11 @@
 
   <!-- Required Modernizr file -->
   <script src="modernizr.custom.js"></script>
+
+  <!-- syntax highlighting -->
+  <link rel="stylesheet" href="styles/monokai_sublime.css">
+  <script src="highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
   <div class="deck-container">
@@ -40,143 +46,105 @@
 
     <section class="slide">
 	<h2>from pyugrm import speaker</h2>
-	<pre>
-&gt;&gt;&gt; print(speaker.name)
+	<pre><code class="python">&gt;&gt;&gt; print(speaker.name)
 Niko Wenselowski
 &gt;&gt;&gt; print(speaker.job)
 Developer at uib GmbH
 &gt;&gt;&gt; print(speaker.github_url)
 https://github.com/okin
 &gt;&gt;&gt; print(speaker.notable_things)
-Organises the Python Stammtisch Darmstadt 
-&gt;&gt;&gt; speaker.talk()
-	</pre>
+Organises the Python Stammtisch Darmstadt
+&gt;&gt;&gt; speaker.talk()</code></pre>
     </section>
 
     <section class="slide">
       <h1>Lists</h1>
     </section>
     <section class="slide">
-	<pre>
-data = []
+	<pre><code class="python">data = []
 for element in elements:
-    data.append(element)
-	</pre>
-	<pre class="slide">
-data = [element for element in elements]
-	</pre>
+    data.append(element)</code></pre>
+	<pre class="slide"><code class="python">data = [element for element in elements]</code></pre>
     </section>
 
     <section class="slide">
-	<pre>
-data = []
+	<pre><code class="python">data = []
 for element in elements:
     for another in more_elements:
-	data.append(another)
-	</pre>
-	<pre class="slide">
-data = [another for another in more_elements for element in elements]
-	</pre>
+	data.append(another)</code></pre>
+	<pre class="slide"><code class="python">data = [another for another in more_elements for element in elements]</code></pre>
     </section>
 
     <section class="slide">
-	<pre>
-&gt;&gt;&gt; [another + element for another in range(100, 500, 100) for element in range(10)]
-[100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409] 
-	</pre>
+	<pre><code class="python">&gt;&gt;&gt; [another + element for another in range(100, 500, 100) for element in range(10)]
+[100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409]</code></pre>
     </section>
 
     <section class="slide">
       <h1>Filtering</h1>
     </section>
     <section class="slide">
-	<pre>
-data = []
+	<pre><code class="python">data = []
 for element in elements:
     if condition:
-        data.append(element)
-	</pre>
-	<pre class="slide">
-even_numbers = []
+        data.append(element)</code></pre>
+	<pre class="slide"><code class="python">even_numbers = []
 for number in range(10):
     if number % 2 == 0:
-        even_numbers.append(element)
-	</pre>
+        even_numbers.append(element)</code></pre>
     </section>
 
     <section class="slide">
-	<pre>
-def condition(element):
+	<pre><code class="python">def condition(element):
     return bool(element)
 
-data = filter(condition, elements)
-	</pre>
-	<pre class="slide">
-def is_even(number):
-    return number % 2 == 0 
+data = filter(condition, elements)</code></pre>
+	<pre class="slide"><code class="python">def is_even(number):
+    return number % 2 == 0
 
-even_numbers = filter(is_even, range(10))
+even_numbers = filter(is_even, range(10))</code></pre>
     </section>
 
     <section class="slide">
-	<pre>
-data = [element for element in elements if condition]
-	</pre>
-	<pre class="slide">
-even_numbers = [number for number in range(10) if number % 2 == 0]
-	</pre>
+	<pre><code class="python">data = [element for element in elements if condition]</code></pre>
+	<pre class="slide"><code class="python">even_numbers = [number for number in range(10) if number % 2 == 0]</code></pre>
     </section>
 
     <section class="slide">
       <h1>Modifying</h1>
     </section>
     <section class="slide">
-	<pre>
-def modifying(element):
+	<pre><code class="python">def modifying(element):
 	return element.modify()
 
-data = map(modifying, elements) 
-	</pre>
-	<pre class="slide">
-def modifying(element):
+data = map(modifying, elements)</code></pre>
+	<pre class="slide"><code class="python">def modifying(element):
 	return element.modify()
 
-data = [modifying(element) for element in elements]
-	</pre>
-	<pre class="slide">
-data = [element.modify() for element in elements]
+data = [modifying(element) for element in elements]</code></pre>
+	<pre class="slide"><code class="python">data = [element.modify() for element in elements]</code></pre>
     </section>
 
     <section class="slide">
       <h1>Swiss Army Knife</h1>
     </section>
     <section class="slide">
-	<pre>
-def isCool(number):
+	<pre><code class="python">def isCool(number):
     return number % 2 == 0
 
 def makeLookCool(number):
     return "-x{0}x-".format(number)
 
-coolNumbers = [makeLookCool(number) for number in range(10) if isCool(number)]
-	</pre> 
-	<pre>
-&gt;&gt;&gt;  ''.join([f + s.upper() for s in reversed('bc') for f in 'A'])
-'ACAB'
-	</pre>
+coolNumbers = [makeLookCool(number) for number in range(10) if isCool(number)]</code></pre>
     </section>
 
     <section class="slide">
       <h1>Generators</h1>
     </section>
     <section class="slide">
-	<pre>
-list = [element for element in elements]
-	</pre>
+	<pre><code class="python">list = [element for element in elements]</code></pre>
 	<div class="slide">
-	<pre> 
-generator = (element for element in elements)
-	</pre>
+	<pre><code class="python">generator = (element for element in elements)</code></pre>
 	<ul>
 	<li>Only consumable once</li>
 	<li>Generate results <i>on the fly</i>
@@ -188,19 +156,13 @@ generator = (element for element in elements)
       <h1>Set Comprehension</h1>
     </section>
     <section class="slide">
-	<h2>Python 2 & 3</h2>
-	<pre>
-new_set = set(list_with_duplicates)
-	</pre>
+	<h2>Python 2 &amp; 3</h2>
+	<pre><code class="python">new_set = set(list_with_duplicates)</code></pre>
 
 	<div class="slide">
 	<h2>Python 3</h2>
-	<pre>
-new_set = {element for element in elements}
-	</pre>
-	<pre>
-another_set = {"create", "a", "small", "set"}
-	</pre>
+	<pre><code class="python">new_set = {element for element in elements}
+another_set = {"create", "a", "small", "set"}</code></pre>
 	<ul class="slide">
 	<li>Can be iterated indefinitely</li>
 	<li>Unordered collection</li>
@@ -213,19 +175,13 @@ another_set = {"create", "a", "small", "set"}
     </section>
 
     <section class="slide">
-	<h2>Python 2 & 3</h2>
-	<pre>
-new_dict = dict(zip(key_list, value_list))
-	</pre>
+	<h2>Python 2 &amp; 3</h2>
+	<pre><code class="python">new_dict = dict(zip(key_list, value_list))</code></pre>
 
 	<div class="slide">
 	<h2>Python 3</h2>
-	<pre>
-new_dict = {key: value for (key, value) in elements}
-	</pre>
-	<pre>
-new_dict = {x: x ** 2 for x in range(16)}
-	</pre>
+	<pre><code class="python">new_dict = {key: value for (key, value) in elements}</code></pre>
+	<pre><code class="python">new_dict = {x: x ** 2 for x in range(16)}</code></pre>
 	</div>
     </section>
 
@@ -250,7 +206,6 @@ new_dict = {x: x ** 2 for x in range(16)}
     <!-- deck.status snippet -->
     <p class="deck-status" aria-role="status">
       <span class="deck-status-current"></span>
-      /
       <span class="deck-status-total"></span>
     </p>
 
