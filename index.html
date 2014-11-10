@@ -178,7 +178,46 @@ data = [modifying(element) for element in elements]</code></pre>
 def makeLookCool(number):
     return "-x{0}x-".format(number)
 
-coolNumbers = [makeLookCool(number) for number in range(10) if isCool(number)]</code></pre>
+coolNumbers = [makeLookCool(number) for number in range(10) if isCool(number)]
+# coolNumbers = ['-x0x-', '-x2x-', '-x4x-', '-x6x-', '-x8x-']
+# Pretty Pythonic, hu?</code></pre>
+    </section>
+
+    <section class="slide">
+        <h1>Benchmarks</h1>
+    </section>
+    <section class="slide">
+    <h2>Filtering</h2>
+    <h3>Python 2</h3>
+    <ul>
+        <li>filter(): 519.19s
+        <li>filter() and lambda: 534.20s
+        <li>list comprehension: 332.27s
+    </ul>
+    <h3>Python 3</h3>
+    <ul>
+        <li>filter(): 763.12s
+        <li>filter() and lambda: 761.27s
+        <li>list comprehension: 429.02s
+    </ul>
+    </section>
+
+    <section class="slide">
+    <h2>Truth testing</h2>
+    <h3>Python 2</h3>
+    <ul>
+        <li>filter(): 67.42s
+        <li>filter() and lambda: 331.86s
+        <li>filter() and builtin: 67.42s
+        <li>list comprehension: 207.81s
+    </ul>
+    <h3>Python 3</h3>
+    <ul>
+        <li>filter(): 60.94s
+        <li>filter() and lambda: 466.41s
+        <li>filter() and builtin: 62.07s
+        <li>list comprehension: 173.97s
+    </ul>
     </section>
 
     <section class="slide">
