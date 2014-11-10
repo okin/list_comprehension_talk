@@ -148,14 +148,16 @@ coolNumbers = [makeLookCool(number) for number in range(10) if isCool(number)]</
       <h1>Generators</h1>
     </section>
     <section class="slide">
-	<pre><code class="python">list = [element for element in elements]</code></pre>
-	<div class="slide">
-	<pre><code class="python">generator = (element for element in elements)</code></pre>
-	<ul>
-	<li>Only consumable once</li>
-	<li>Generate results <i>on the fly</i>
-	</ul>
-	</div>
+      <h2>Python 2 &amp; 3</h2>
+      <pre><code class="python">list = [element for element in elements]</code></pre>
+      <div class="slide">
+        <pre><code class="python">generator = (element for element in elements)</code></pre>
+        <ul>
+        <li>Only consumable once
+        <li>Generate results <i>on the fly</i>
+        <li>See also: <i>yield</i>
+        </ul>
+      </div>
     </section>
 
     <section class="slide">
