@@ -64,7 +64,11 @@ Organises the Python Stammtisch Darmstadt
 	<pre><code class="python">data = []
 for element in elements:
     data.append(element)</code></pre>
+    <pre class="slide"><code class="python">numbers = []
+for number in range(10):
+    numbers.append(number)</code></pre>
 	<pre class="slide"><code class="python">data = [element for element in elements]</code></pre>
+    <pre class="slide"><code class="python">numbers = [number for number in range(10)]</code></pre>
     </section>
 
     <section class="slide">
@@ -72,12 +76,14 @@ for element in elements:
 for element in elements:
     for another in more_elements:
 	data.append(another)</code></pre>
-	<pre class="slide"><code class="python">data = [another for another in more_elements for element in elements]</code></pre>
-    </section>
-
-    <section class="slide">
-	<pre><code class="python">&gt;&gt;&gt; [another + element for another in range(100, 500, 100) for element in range(10)]
-[100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409]</code></pre>
+    <pre><code class="python">numbers = []
+for cents in range(100, 500, 100):
+    for number in range(10):
+        numbers.append(cents + number)</code></pre>
+    <div class="slide">
+    <pre><code class="python">data = [another for another in more_elements for element in elements]</code></pre>
+	<pre><code class="python">numbers = [cents + number for cents in range(100, 500, 100) for number in range(10)]</code></pre>
+    </div>
     </section>
 
     <section class="slide">
@@ -96,7 +102,7 @@ for number in range(10):
 
     <section class="slide">
 	<pre><code class="python">def condition(element):
-    return bool(element)
+    return is_meeting_requirement(element)
 
 data = filter(condition, elements)</code></pre>
 	<pre class="slide"><code class="python">def is_even(number):
