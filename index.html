@@ -191,18 +191,33 @@ coolNumbers = [makeLookCool(number) for number in range(10) if isCool(number)]
         <h1>Benchmarks</h1>
     </section>
     <section class="slide">
-    <h2>Filtering</h2>
+    <h2>List Creation</h2>
     <h3>Python 2</h3>
     <ul>
-        <li>filter(): 519.19s
-        <li>filter() and lambda: 534.20s
-        <li>list comprehension: 332.27s
+        <li>for-loop: 397.49s
+        <li>optimised for-loop: 268.47s
+        <li>list comprehension: 139.45s
     </ul>
     <h3>Python 3</h3>
     <ul>
-        <li>filter(): 763.12s
-        <li>filter() and lambda: 761.27s
-        <li>list comprehension: 429.02s
+        <li>for-loop: 311.40s
+        <li>optimised for-loop: 194.23s
+        <li>list comprehension: 148.07s
+    </ul>
+    </section>
+    <section class="slide">
+    <h2>Filtering</h2>
+    <h3>Python 2</h3>
+    <ul>
+        <li>for-loop: 451.59s
+        <li>filter(): 531.21s
+        <li>list comprehension: 324.19s
+    </ul>
+    <h3>Python 3</h3>
+    <ul>
+        <li>for-loop: 523.69s
+        <li>filter(): 755.49s
+        <li>list comprehension: 430.89s
     </ul>
     </section>
 
@@ -210,17 +225,27 @@ coolNumbers = [makeLookCool(number) for number in range(10) if isCool(number)]
     <h2>Truth testing</h2>
     <h3>Python 2</h3>
     <ul>
-        <li>filter(): 67.42s
-        <li>filter() and lambda: 331.86s
-        <li>filter() and builtin: 67.42s
-        <li>list comprehension: 207.81s
+        <li>filter(): 68.22s
+        <li>list comprehension: 202.16s
     </ul>
     <h3>Python 3</h3>
     <ul>
-        <li>filter(): 60.94s
-        <li>filter() and lambda: 466.41s
-        <li>filter() and builtin: 62.07s
-        <li>list comprehension: 173.97s
+        <li>filter(): 61.24s
+        <li>list comprehension: 176.07s
+    </ul>
+    </section>
+
+    <section class="slide">
+    <h2>Mapping</h2>
+    <h3>Python 2</h3>
+    <ul>
+        <li>map(): 777.73s
+        <li>list comprehension: 469.42s
+    </ul>
+    <h3>Python 3</h3>
+    <ul>
+        <li>map(): 788.99s
+        <li>list comprehension: 498.30s
     </ul>
     </section>
 
