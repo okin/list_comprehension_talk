@@ -260,6 +260,8 @@ coolNumbers = [makeLookCool(number) for number in range(10) if isCool(number)]
       <pre><code class="python">list = [element for element in elements]</code></pre>
       <div class="slide">
         <pre><code class="python">generator = (element for element in elements)</code></pre>
+
+        <h3>Generator</h2>
         <ul>
         <li>Only consumable once
         <li>Generate results <em>on the fly</em>
@@ -277,17 +279,22 @@ coolNumbers = [makeLookCool(number) for number in range(10) if isCool(number)]
 for element in elements:
     if element not in data:
         data.append(element)</code></pre>
+	<div class="slide">
+	<pre><code class="python">new_list = list(set(list_with_duplicates))</code></pre>
 	<pre><code class="python">new_set = set(list_with_duplicates)
 # about 10 times as fast as the for loop above</code></pre>
+
+        <h3>Set</h2>
+	<ul>
+	<li>Can be iterated indefinitely</li>
+	<li>Unordered collection</li>
+	</ul>
+	</div>
 
 	<div class="slide">
 	<h2>Python 3</h2>
 	<pre><code class="python">new_set = {element for element in elements}
 another_set = {"create", "a", "small", "set"}</code></pre>
-	<ul>
-	<li>Can be iterated indefinitely</li>
-	<li>Unordered collection</li>
-	</ul>
 	</div>
     </section>
 
